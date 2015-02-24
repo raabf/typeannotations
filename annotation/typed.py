@@ -26,13 +26,14 @@ This module provides a set of tools for type checking and annotations:
 
 __author__ = ('Manuel Cerón <ceronman@gmail.com>')
 __all__ = ['AnyType', 'Interface', 'only', 'optional', 'options', 'predicate',
-           'typechecked', 'typedef', 'union']
+           'typechecked', 'typedef', 'union', 'void']
 
 import functools
 import inspect
 
 EMPTY_ANNOTATION = inspect.Signature.empty
 
+void = type(None) # An alias for `type(None)` e.g. for returning nothing.
 
 class UnionMeta(type):
     """Metaclass for union types.
